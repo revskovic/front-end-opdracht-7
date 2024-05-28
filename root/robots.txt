@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /homepage.html
+Disallow: /404.html
+Disallow: /alt-attribute.html
+
+Sitemap: http://127.0.0.1:5500/

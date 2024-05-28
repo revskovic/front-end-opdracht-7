@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welkom op mijn website.">
+    <meta name="robots" content="index, follow">
+    <title>Welkom bij Mijn Website</title>
+    <!-- Voeg andere meta tags hier toe als dat nodig is -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="homepage.html">Homepagina</a>
+        <a href="404.html">404 Pagina</a>
+        <a href="alt-attribute.html">Alt Attributen</a>
+    </nav>
+
+    <h1>Dit is de homepagina van deze website.</h1>
+    <p>Op deze website heb ik 3 pagina's gemaakt die de opdracht die ik moest maken laten zien.</p>
+
+    <div id="seo-checker">
+        <h2>SEO Checker</h2>
+        <button onclick="runSeoChecker()">Controleer SEO</button>
+        <div id="seo-results"></div>
+    </div>
+
+    <script>
+        function runSeoChecker() {
+            let results = '';
+
+            // Check title
+            const title = document.querySelector('title');
+            if (title && title.textContent.length > 0) {
+                results += `<p>✅ Titel is aanwezig: ${title.textContent}</p>`;
+            } else {
+                results += '<p>❌ Titel ontbreekt</p>';
+            }
+
+            // Check meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription && metaDescription.content.length > 0) {
+                results += `<p>✅ Meta description is aanwezig: ${metaDescription.content}</p>`;
+            } else {
+                results += '<p>❌ Meta description ontbreekt</p>';
+            }
+
+            // Check headers
+            const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            if (headers.length > 0) {
+                results += '<p>✅ Headers zijn aanwezig</p>';
+            } else {
+                results += '<p>❌ Headers ontbreken</p>';
+            }
+
+            // Check images for alt attributes
+            const images = document.querySelectorAll('img');
+            let allImagesHaveAlt = true;
+            images.forEach(img => {
+                if (!img.hasAttribute('alt') || img.getAttribute('alt').trim() === '') {
+                    allImagesHaveAlt = false;
+                }
+            });
+            if (allImagesHaveAlt) {
+                results += '<p>✅ Alle afbeeldingen hebben alt-attributen</p>';
+            } else {
+                results += '<p>❌ Sommige afbeeldingen missen alt-attributen</p>';
+            }
+
+            // Check for internal links
+            const links = document.querySelectorAll('a');
+            if (links.length > 0) {
+                results += '<p>✅ Er zijn interne links aanwezig</p>';
+            } else {
+                results += '<p>❌ Er ontbreken interne links</p>';
+            }
+
+            // Display results
+            document.getElementById('seo-results').innerHTML = results;
+        }
+    </script>
+</body>
+</html>
+

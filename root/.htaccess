@@ -1,0 +1,30 @@
+# Begin van het .htaccess-bestand
+
+# Zorg ervoor dat de URL's worden herschreven zodat ze gebruiksvriendelijker zijn
+RewriteEngine On
+RewriteRule ^alt-attribute.html$ alt-attribute.html [L]
+
+# Aangepaste 404-foutpagina
+ErrorDocument 404 /404.html
+
+# Compressie inschakelen voor snellere laadtijden
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+# Browser caching inschakelen
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Toegang tot bepaalde bestanden beperken
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh|inc|bak)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Einde van het .htaccess-bestand

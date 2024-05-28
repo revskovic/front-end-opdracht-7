@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--<loc>: de locatie van de URL. Dit is simpelweg het complete adres van de pagina die wordt behandeld.-->
+<!--<lastmod>: hier vind je informatie over wanneer de pagina het last is aangepast.-->
+<!--<changefreq>: in deze regel vertelt de sitemap de zoekmachine hoe vaak je je pagina’s gemiddeld aanpast.-->
+<!--<priority>: een laatste regel die je ziet geeft de pagina een bepaalde prioriteit vergeleken met de rest van de pagina’s op je website. 
+De score ligt tussen 0 en 1. Hoe dichter bij 1, hoe meer prioriteit de pagina heeft.-->
+  <!-- Home page -->
+  <url>
+    <loc>http://127.0.0.1:5500/root/pages/homepage.html</loc>
+    <lastmod>2024-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- 404 page -->
+  <url>
+    <loc>http://127.0.0.1:5500/root/pages/404.html</loc>
+    <lastmod>2024-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- alt image page -->
+  <url>
+    <loc>http://127.0.0.1:5500/root/pages/alt-attribute.html</loc>
+    <lastmod>2024-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
