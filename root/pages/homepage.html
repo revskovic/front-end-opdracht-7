@@ -60,16 +60,13 @@
         <a href="homepage.html">Homepagina</a>
         <a href="404.html">404 Pagina</a>
         <a href="alt-attribute.html">Alt Attributen</a>
+        <a href="over mezelf.html">Over mezelf</a>
+        <a href="projecten.html">projecten</a>
+        <a href="skillsenwerkervaring.html">skills</a>
     </nav>
 
     <h1>Dit is de homepagina van deze website.</h1>
-    <p>Op deze website heb ik 3 pagina's gemaakt die de opdracht die ik moest maken laten zien.</p>
-    <p>ik ben justin en zit op het TCR</p>
-    <p>nummer: 0611276367</p>
-    <p>email: 9021911@student.zadknine.nl</p>
-    <p>ik heb een redelijk assortiment aan vaardigheden zoals: html, css, php, sql en javascript.
-        ik zit op het TCR er zat op het farelcollege en ik werk bij de albert heijn</p>
-    <p>projecten die ik heb gedaan zijn: een website maken, een website met een game die speelbaar is maken en een webshop maken.</p>
+    <p>Op deze website heb ik 6 pagina's gemaakt die de opdracht die ik moest maken laten zien.</p>
 
     <div id="seo-checker">
         <h2>SEO Checker</h2>
@@ -77,60 +74,8 @@
         <div id="seo-results"></div>
     </div>
 
-    <script>
-        function runSeoChecker() {
-            let results = '';
-
-            // Check title
-            const title = document.querySelector('title');
-            if (title && title.textContent.length > 0) {
-                results += `<p>✅ Titel is aanwezig: ${title.textContent}</p>`;
-            } else {
-                results += '<p>❌ Titel ontbreekt</p>';
-            }
-
-            // Check meta description
-            const metaDescription = document.querySelector('meta[name="description"]');
-            if (metaDescription && metaDescription.content.length > 0) {
-                results += `<p>✅ Meta description is aanwezig: ${metaDescription.content}</p>`;
-            } else {
-                results += '<p>❌ Meta description ontbreekt</p>';
-            }
-
-            // Check headers
-            const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            if (headers.length > 0) {
-                results += '<p>✅ Headers zijn aanwezig</p>';
-            } else {
-                results += '<p>❌ Headers ontbreken</p>';
-            }
-
-            // Check images for alt attributes
-            const images = document.querySelectorAll('img');
-            let allImagesHaveAlt = true;
-            images.forEach(img => {
-                if (!img.hasAttribute('alt') || img.getAttribute('alt').trim() === '') {
-                    allImagesHaveAlt = false;
-                }
-            });
-            if (allImagesHaveAlt) {
-                results += '<p>✅ Alle afbeeldingen hebben alt-attributen</p>';
-            } else {
-                results += '<p>❌ Sommige afbeeldingen missen alt-attributen</p>';
-            }
-
-            // Check for internal links
-            const links = document.querySelectorAll('a');
-            if (links.length > 0) {
-                results += '<p>✅ Er zijn interne links aanwezig</p>';
-            } else {
-                results += '<p>❌ Er ontbreken interne links</p>';
-            }
-
-            // Display results
-            document.getElementById('seo-results').innerHTML = results;
-        }
-    </script>
+    <script src="homepage.js"></script>
 </body>
 </html>
+
 
